@@ -1,0 +1,65 @@
+spring:
+  redis:
+    host: 192.168.1.215
+    port: 6379
+
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://192.168.1.212:3306/kscs?useUnicode=true&characterEncoding=UTF-8&useSSL=false&useAffectedRows=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+       minimum-idle: 10
+       maximum-pool-size: 100
+
+  jpa:
+    show-sql: true
+
+  freemarker:
+    cache: false
+
+  oss:
+    accessId: LTAIgMClz6QLI9e9
+    accessKey: eHAEBlwFABapXKhIVEVZX7lyoZTmrp
+    endpoint: oss-cn-shenzhen.aliyuncs.com
+    bucket: ksdev
+    policyExpireTime: 30
+    dir: kscs/
+
+
+  sms:
+    signName: 唰唰买单
+    accessKeyId: LTAIHH3XCDFKFN9S
+    accessKeySecret: tdXY2KJkLmtKeiDfeun3FJpigvEAWA
+
+  verify:
+    code:
+      close: true
+
+
+module:
+  code: api
+  prefix: app
+  domain:
+    static: http://ssstatic.oss-cn-shenzhen.aliyuncs.com
+    main: http://192.168.1.215:8091
+    cookie: 192.168.1.215
+
+  uri:
+    login: login
+    forbidden: /forbidden
+    notFound: /404
+    forceExit: /forceExit
+  page:
+    notFound: core/notFound
+    error: core/error
+  ajax:
+    notFound: core/notFoundAjax
+    error: core/errorAjax
+
+logging:
+  level:
+    jia: DEBUG
+    ROOT: INFO

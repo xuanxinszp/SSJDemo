@@ -1,0 +1,9 @@
+rootProject.name = 'ssjdemo'
+include 'lib-common'
+include 'lib-menu'
+include 'lib-admin'
+include 'lib-user'
+include 'lib-sys'
+include 'app-api'
+include 'app-manage'
+

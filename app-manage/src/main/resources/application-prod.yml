@@ -1,0 +1,41 @@
+spring:
+  redis:
+     host: 47.106.188.184
+     port: 6379
+     database: 7
+     password: NBYfYETxNhPdtCFG
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://47.106.188.184:4969/coin?useUnicode=true&characterEncoding=UTF-8&useSSL=false&useAffectedRows=true
+    username: coin
+    password: h6mXKAx2nwDWs2j5
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+       minimum-idle: 10
+       maximum-pool-size: 100
+
+  jpa:
+    show-sql: true
+
+  freemarker:
+    cache: false
+
+  oss:
+    accessId: LTAIuJzRWuXbLlag
+    accessKey: WbDoBQJNJCbV7QLyXM6iemUsn9eNxo
+    endpoint: oss-cn-shenzhen.aliyuncs.com
+    bucket: wcgg
+    policyExpireTime: 30
+    dir: coin/
+
+
+module:
+  domain:
+    main: http://47.106.188.184:8080
+    cookie: 47.106.188.184
+
+logging:
+  level:
+    jia: DEBUG
+    ROOT: INFO

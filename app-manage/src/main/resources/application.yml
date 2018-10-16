@@ -1,0 +1,59 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+
+  jpa:
+    hibernate:
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    database: MYSQL
+    generate-ddl: false
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: none
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    open-in-view: false
+
+  freemarker:
+      allow-request-override: false
+      allow-session-override: false
+      cache: false
+      charset: UTF-8
+      check-template-location: true
+      content-type: text/html
+      enabled: true
+      expose-request-attributes: false
+      expose-session-attributes: false
+      expose-spring-macro-helpers: false
+      prefer-file-system-access: true
+      suffix: .ftl
+      template-loader-path: classpath:/templates/
+      settings:
+        template_update_delay: 0
+        default_encoding: UTF-8
+        classic_compatible: true
+        date_format: yyyy-MM-dd
+        time_format: HH:mm:ss
+        datetime_format: yyyy-MM-dd HH:mm:ss
+
+
+module:
+  code: manage
+  prefix: HT
+  domain:
+    static: http://wcgg.oss-cn-shenzhen.aliyuncs.com
+  uri:
+    login: login
+    forbidden: /forbidden
+    notFound: /404
+    forceExit: /forceExit
+  page:
+    notFound: core/notFound
+    error: core/error
+  ajax:
+    notFound: core/notFoundAjax
+    error: core/errorAjax

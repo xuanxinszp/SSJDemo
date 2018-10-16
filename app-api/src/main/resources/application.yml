@@ -1,0 +1,42 @@
+server:
+  port: 8081
+
+spring:
+  profiles:
+    active: dev
+
+  jpa:
+    hibernate:
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    database: MYSQL
+    generate-ddl: false
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: none
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    open-in-view: false
+
+  freemarker:
+    settings:
+      classic_compatible: true
+
+
+module:
+  code: api
+  prefix: app
+  domain:
+    static: http://wcgg.oss-cn-shenzhen.aliyuncs.com
+
+  uri:
+    login: login
+    forbidden: /forbidden
+    notFound: /404
+    forceExit: /forceExit
+  page:
+    notFound: core/notFound
+    error: core/error
+  ajax:
+    notFound: core/notFoundAjax
+    error: core/errorAjax
